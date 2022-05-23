@@ -21,5 +21,5 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/subscribe', function () {
-    return 'Fucking Subscribe la!!';
+    return view('subscribe.index');
 });
