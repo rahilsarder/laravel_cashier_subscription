@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SubscriptionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,3 +24,14 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/subscribe', function () {
     return view('subscribe.index');
 });
+Route::get('/plans', function () {
+    return view('subscribe.plans');
+});
+Route::get('/plans', [SubscriptionController::class, 'showSubscription']);
+
+
+Route::get('test/{id}', function ($id) {
+    return view('subscribe.form', ['id' => $id]);
+});
+// Route::get('/subscribe', [SubscriptionController::class, 'showSubscription']);
+// Route::post('/subscribe', [SubscriptionController::class, 'processSubscription']);
